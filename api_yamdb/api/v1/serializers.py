@@ -1,9 +1,9 @@
-from rest_framework import serializers
-from django.utils.timezone import now
 from django.core import validators
+from django.utils.timezone import now
+from rest_framework import serializers
 
 from reviews.models import (
-    Genre, User, Category, Title, Review, Comment
+    Category, Comment, Genre, Review, Title, User
 )
 
 

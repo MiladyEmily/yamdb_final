@@ -1,35 +1,30 @@
 import uuid
-from django.shortcuts import get_object_or_404
-from django.db.models import Avg
-from django.db import IntegrityError
-from reviews.models import Genre, User, Title, Category, Review, TitleGenre
-from .serializers import (
-    GenreSerializer, CategorySerializer, UserSerializer,
-    TitleReadSerializer, ReviewSerializer, CommentSerializer,
-    TitleWriteSerializer, SignupSerializer,
-    TokenSerializer, MeSerializer
-)
-from .mixins import GetPostDeleteViewSet
-from .permissions import (
-    IsAdminOrReadOnly,
-    AuthorOrModeratorReadOnly,
-    AuthorAndStaffOrReadOnly,
-    OwnerOrAdmins
-)
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from rest_framework import status, viewsets
 
-from rest_framework.pagination import PageNumberPagination
-from rest_framework.filters import SearchFilter
-from rest_framework.decorators import action
-from rest_framework.permissions import IsAuthenticated
+from django.core.mail import send_mail
+from django.db import IntegrityError
+from django.db.models import Avg
+from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import status, viewsets
+from rest_framework.decorators import action, api_view
+from rest_framework.filters import SearchFilter
+from rest_framework.pagination import PageNumberPagination
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+from rest_framework_simplejwt.tokens import AccessToken
+from reviews.models import Category, Genre, Review, Title, TitleGenre, User
+
+from api_yamdb.settings import SENDER_EMAIL
 
 from .filtersets import TitleFilterSet
-from api_yamdb.settings import SENDER_EMAIL
-from django.core.mail import send_mail
-from rest_framework_simplejwt.tokens import AccessToken
+from .mixins import GetPostDeleteViewSet
+from .permissions import (AuthorAndStaffOrReadOnly, AuthorOrModeratorReadOnly,
+                          IsAdminOrReadOnly, OwnerOrAdmins)
+from .serializers import (CategorySerializer, CommentSerializer,
+                          GenreSerializer, MeSerializer, ReviewSerializer,
+                          SignupSerializer, TitleReadSerializer,
+                          TitleWriteSerializer, TokenSerializer,
+                          UserSerializer)
 
 
 class GenreViewSet(GetPostDeleteViewSet):
