@@ -1,4 +1,4 @@
-![Yamdb_workflow status](https://github.com/github/docs/actions/workflows/yamdb_workflow.yml/badge.svg?branch=master&event=push)
+![Yamdb_workflow](https://github.com/MiladyEmily/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 Проект доступен по ссылке: http://51.250.69.185/
 
