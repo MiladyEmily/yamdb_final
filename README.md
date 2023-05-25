@@ -1,4 +1,6 @@
-![yamdb_workflow status](https://github.com/github/docs/actions/workflows/yamdb_workflow.yml/badge.svg)
+![Yamdb_workflow status](https://github.com/github/docs/actions/workflows/yamdb_workflow.yml/badge.svg?branch=master&event=push)
+
+Проект доступен по ссылке: http://51.250.69.185/
 
 # Описание проекта YaMDb_api
 
