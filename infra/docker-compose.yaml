@@ -11,7 +11,7 @@ services:
       - ./.env
 
   web:
-    image: miladyemily/api_yamdb:latest
+    image: miladyemily/api_yamdb:v1.10
 
     restart: always
 

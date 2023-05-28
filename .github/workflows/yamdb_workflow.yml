@@ -43,7 +43,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: miladyemily/api_yamdb:latest
+          tags: miladyemily/api_yamdb:v1.10
           file: api_yamdb/Dockerfile
 
   deploy:
