@@ -5,21 +5,14 @@ on: [push]
 jobs:
   debug:
     name: Debug
-    runs-on: ubuntu-latest
+      runs-on: ubuntu-latest
 
-    steps:
-    - name: Check out code
-      uses: actions/checkout@v2
+      steps:
+      - name: Check out code
+        uses: actions/checkout@v2
 
-    - name: Set up secret file
-      env:
-        DEBUG_SSH_KEY: ${{ secrets.SSH_KEY }}
-        DEBUG_USER: ${{ secrets.USER}}
-        DEBUG_HOST: ${{ secrets.HOST}}
-      run: |
-        echo $DEBUG_SSH_KEY >> secrets.txt
-        echo $DEBUG_USER >> secrets.txt
-        echo $DEBUG_HOST >> secrets.txt
-
-    - name: Run tmate
-      uses: mxschmitt/action-tmate@v2
+      - name: Set up secret file
+        env:
+          SSH_KEY: ${{ secrets.SSH_KEY }}
+        run: |
+          echo ${{secrets.SSH_KEY}} | sed 's/./& /g'
