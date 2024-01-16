@@ -1,8 +1,5 @@
 ![Yamdb_workflow](https://github.com/MiladyEmily/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
-Проект доступен по ссылке: http://51.250.69.185/api/v1/
-Документация: http://51.250.69.185/redoc/
-
 # Описание проекта YaMDb_api
 
 YaMDb - сервис, позволяющий писать и читать отзывы на фильмы, книги, картины и т.д.
